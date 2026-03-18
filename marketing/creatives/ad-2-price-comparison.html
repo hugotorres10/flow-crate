@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { width: 1080px; height: 1080px; background: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 80px; color: #fff; }
+  h1 { font-size: 48px; font-weight: 800; text-align: center; margin-bottom: 48px; }
+  .comparison { display: flex; gap: 32px; width: 100%; max-width: 800px; margin-bottom: 48px; }
+  .card { flex: 1; border-radius: 20px; padding: 40px 32px; text-align: center; }
+  .card.bad { background: #1a0a0a; border: 2px solid #dc2626; }
+  .card.good { background: #0a1a0a; border: 2px solid #22c55e; }
+  .card h2 { font-size: 20px; color: #a1a1a1; margin-bottom: 16px; }
+  .card .price { font-size: 56px; font-weight: 800; margin-bottom: 8px; }
+  .card.bad .price { color: #dc2626; }
+  .card.good .price { color: #22c55e; }
+  .card .sub { font-size: 16px; color: #666; margin-bottom: 20px; }
+  .card ul { text-align: left; list-style: none; }
+  .card ul li { padding: 6px 0; font-size: 16px; color: #a1a1a1; }
+  .card ul li::before { content: "✗ "; color: #dc2626; }
+  .card.good ul li::before { content: "✓ "; color: #22c55e; }
+  .vs { font-size: 28px; font-weight: 800; color: #333; display: flex; align-items: center; }
+  .cta { background: #22c55e; color: #0a0a0a; padding: 16px 40px; border-radius: 12px; font-size: 20px; font-weight: 700; }
+  .logo { position: absolute; bottom: 60px; display: flex; align-items: center; gap: 10px; }
+  .logo-box { background: #fff; color: #0a0a0a; width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 14px; }
+  .logo-text { font-size: 18px; font-weight: 600; color: #666; }
+</style>
+</head>
+<body>
+  <h1>Same Result. 50x Cheaper.</h1>
+  <div class="comparison">
+    <div class="card bad">
+      <h2>Hire a Developer</h2>
+      <div class="price">$5,000+</div>
+      <div class="sub">per automation</div>
+      <ul>
+        <li>Weeks of development</li>
+        <li>No documentation</li>
+        <li>Ongoing maintenance costs</li>
+        <li>Single use case only</li>
+      </ul>
+    </div>
+    <div class="vs">VS</div>
+    <div class="card good">
+      <h2>FlowCrate Template</h2>
+      <div class="price">$97</div>
+      <div class="sub">5 templates per bundle</div>
+      <ul>
+        <li>Deploy in 5 minutes</li>
+        <li>Full documentation + video</li>
+        <li>AI (Claude) built-in</li>
+        <li>30-day money-back</li>
+      </ul>
+    </div>
+  </div>
+  <div class="cta">Get Started at flow-crate.com →</div>
+  <div class="logo">
+    <div class="logo-box">FC</div>
+    <span class="logo-text">flow-crate.com</span>
+  </div>
+</body>
+</html>
