@@ -1,0 +1,65 @@
+{
+  "name": "FlowCrate — Waitlist Collector",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "flowcrate-waitlist",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "trigger-1",
+      "name": "Waitlist Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const { email } = $input.first().json.body;\nif (!email || !email.includes('@')) {\n  throw new Error('Invalid email');\n}\nreturn [{\n  json: {\n    email,\n    timestamp: new Date().toISOString(),\n    source: $input.first().json.headers?.referer || 'direct',\n    ip: $input.first().json.headers?.['cf-connecting-ip'] || 'unknown'\n  }\n}];"
+      },
+      "id": "code-1",
+      "name": "Validate & Format",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [470, 300]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": "CONFIGURE_ME",
+        "sheetName": "Waitlist",
+        "columns": {
+          "mappingMode": "autoMapInputData"
+        }
+      },
+      "id": "sheets-1",
+      "name": "Save to Google Sheets",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [690, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ JSON.stringify({ success: true, message: 'Welcome to FlowCrate!' }) }}"
+      },
+      "id": "response-1",
+      "name": "Send Response",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [910, 300]
+    }
+  ],
+  "connections": {
+    "Waitlist Webhook": {
+      "main": [[{ "node": "Validate & Format", "type": "main", "index": 0 }]]
+    },
+    "Validate & Format": {
+      "main": [[{ "node": "Save to Google Sheets", "type": "main", "index": 0 }]]
+    },
+    "Save to Google Sheets": {
+      "main": [[{ "node": "Send Response", "type": "main", "index": 0 }]]
+    }
+  }
+}

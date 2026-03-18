@@ -1,0 +1,62 @@
+{
+  "name": "AI Customer Support Ticket Triage & Auto-Reply",
+  "description": "Receives support tickets via email/webhook, uses AI to categorize (billing, technical, feature request, bug), assess urgency, draft a response, and route to the right team member. Auto-replies to simple questions.",
+  "category": "Customer Support",
+  "price": 59,
+  "difficulty": "Beginner",
+  "nodes_count": 11,
+  "estimated_setup": "10 minutes",
+  "requires": ["Claude API Key", "Email/Helpdesk", "Slack (optional)"],
+  "tags": ["support", "tickets", "ai", "triage", "auto-reply", "customer-service"],
+  "workflow": {
+    "meta": { "instanceId": "flowstore-ticket-triage-v1" },
+    "nodes": [
+      {
+        "parameters": { "httpMethod": "POST", "path": "support-ticket", "responseMode": "responseNode" },
+        "id": "trigger-1", "name": "New Ticket Webhook", "type": "n8n-nodes-base.webhook", "typeVersion": 2, "position": [250, 300]
+      },
+      {
+        "parameters": {
+          "resource": "chat", "model": "claude-sonnet-4-5-20250929",
+          "messages": { "values": [{ "role": "user", "content": "=Analyze this support ticket and return JSON:\n\nFrom: {{ $json.body.from }}\nSubject: {{ $json.body.subject }}\nMessage: {{ $json.body.message }}\n\nReturn: { \"category\": \"billing|technical|bug|feature_request|account|other\", \"urgency\": \"low|medium|high|critical\", \"sentiment\": \"positive|neutral|negative|angry\", \"can_auto_reply\": boolean, \"auto_reply\": \"draft reply if simple question\", \"summary\": \"1 sentence summary\", \"assign_to\": \"billing_team|engineering|product|general_support\" }" }] },
+          "options": { "maxTokens": 800, "temperature": 0.2 }
+        },
+        "id": "claude-1", "name": "AI Triage", "type": "@n8n/n8n-nodes-langchain.lmChatAnthropic", "typeVersion": 1, "position": [470, 300],
+        "credentials": { "anthropicApi": { "id": "CONFIGURE_ME", "name": "Anthropic API" } }
+      },
+      {
+        "parameters": {
+          "jsCode": "const ticket = $('New Ticket Webhook').first().json.body;\nconst ai = $input.first().json.message.content;\nlet triage;\ntry { triage = JSON.parse(ai.match(/\\{[\\s\\S]*\\}/)[0]); } catch(e) { triage = { category: 'other', urgency: 'medium', can_auto_reply: false }; }\nreturn [{ json: { ...ticket, triage } }];"
+        },
+        "id": "code-1", "name": "Parse Triage", "type": "n8n-nodes-base.code", "typeVersion": 2, "position": [690, 300]
+      },
+      {
+        "parameters": { "conditions": { "boolean": [{ "value1": "={{ $json.triage.can_auto_reply }}", "value2": true }] } },
+        "id": "if-auto", "name": "Can Auto-Reply?", "type": "n8n-nodes-base.if", "typeVersion": 2, "position": [910, 300]
+      },
+      {
+        "parameters": {
+          "fromEmail": "support@yourcompany.com",
+          "toEmail": "={{ $json.from }}",
+          "subject": "=Re: {{ $json.subject }}",
+          "message": "={{ $json.triage.auto_reply }}"
+        },
+        "id": "email-reply", "name": "Send Auto-Reply", "type": "n8n-nodes-base.emailSend", "typeVersion": 2.1, "position": [1130, 200]
+      },
+      {
+        "parameters": {
+          "channel": "#support-queue",
+          "text": "=📩 *New Ticket* [{{ $json.triage.urgency.toUpperCase() }}]\n\n*Category:* {{ $json.triage.category }}\n*From:* {{ $json.from }}\n*Subject:* {{ $json.subject }}\n*Sentiment:* {{ $json.triage.sentiment }}\n*Summary:* {{ $json.triage.summary }}\n*Assign to:* {{ $json.triage.assign_to }}"
+        },
+        "id": "slack-1", "name": "Route to Team", "type": "n8n-nodes-base.slack", "typeVersion": 2.2, "position": [1130, 400],
+        "credentials": { "slackApi": { "id": "CONFIGURE_ME", "name": "Slack API" } }
+      }
+    ],
+    "connections": {
+      "New Ticket Webhook": { "main": [[{ "node": "AI Triage", "type": "main", "index": 0 }]] },
+      "AI Triage": { "main": [[{ "node": "Parse Triage", "type": "main", "index": 0 }]] },
+      "Parse Triage": { "main": [[{ "node": "Can Auto-Reply?", "type": "main", "index": 0 }]] },
+      "Can Auto-Reply?": { "main": [ [{ "node": "Send Auto-Reply", "type": "main", "index": 0 }], [{ "node": "Route to Team", "type": "main", "index": 0 }] ] }
+    }
+  }
+}
