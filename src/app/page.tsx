@@ -9,9 +9,9 @@ import Link from "next/link";
 function GradientOrbs() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden">
-      <div className="absolute -top-[40%] -left-[20%] h-[80vh] w-[80vh] rounded-full bg-violet-600/15 blur-[120px] animate-[drift_20s_ease-in-out_infinite]" />
-      <div className="absolute -bottom-[30%] -right-[15%] h-[60vh] w-[60vh] rounded-full bg-blue-600/10 blur-[100px] animate-[drift_25s_ease-in-out_infinite_reverse]" />
-      <div className="absolute top-[20%] right-[10%] h-[40vh] w-[40vh] rounded-full bg-emerald-500/8 blur-[80px] animate-[drift_18s_ease-in-out_infinite_2s]" />
+      <div className="absolute -top-[40%] -left-[20%] h-[80vh] w-[80vh] rounded-full bg-violet-600/15 blur-[120px] animate-drift" />
+      <div className="absolute -bottom-[30%] -right-[15%] h-[60vh] w-[60vh] rounded-full bg-blue-600/10 blur-[100px] animate-drift-reverse" />
+      <div className="absolute top-[20%] right-[10%] h-[40vh] w-[40vh] rounded-full bg-emerald-500/8 blur-[80px] animate-drift-slow" />
     </div>
   );
 }
@@ -91,9 +91,7 @@ function WorkflowPreview() {
 
   return (
     <div className="relative mx-auto max-w-3xl mt-16 px-4">
-      {/* Glass container */}
       <div className="rounded-2xl border border-white/[0.08] bg-white/[0.02] backdrop-blur-sm p-1 shadow-2xl shadow-black/40">
-        {/* Title bar */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-white/[0.06]">
           <div className="flex gap-1.5">
             <div className="w-3 h-3 rounded-full bg-red-500/60" />
@@ -106,7 +104,6 @@ function WorkflowPreview() {
           </div>
         </div>
 
-        {/* Workflow canvas */}
         <div className="p-8 flex items-center justify-center gap-2 sm:gap-4 overflow-x-auto">
           {nodes.map((node, i) => (
             <div key={node.label} className="flex items-center gap-2 sm:gap-4">
@@ -120,7 +117,6 @@ function WorkflowPreview() {
                   <span className="text-lg sm:text-xl block mb-1">{node.icon}</span>
                   <span className="text-[10px] sm:text-xs font-medium text-white/70 whitespace-nowrap">{node.label}</span>
                 </div>
-                {/* Tooltip */}
                 {activeNode === i && (
                   <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 whitespace-nowrap text-[10px] text-white/50 bg-black/80 backdrop-blur-sm px-2.5 py-1 rounded-md border border-white/10 z-10">
                     {node.desc}
@@ -129,7 +125,7 @@ function WorkflowPreview() {
               </div>
               {i < nodes.length - 1 && (
                 <div className="flex items-center">
-                  <div className={`h-px w-4 sm:w-8 transition-colors duration-500 ${activeNode !== null && (activeNode >= i) ? "bg-gradient-to-r from-white/40 to-white/20" : "bg-white/10"}`} />
+                  <div className={`h-px w-4 sm:w-8 transition-colors duration-500 ${activeNode !== null && activeNode >= i ? "bg-gradient-to-r from-white/40 to-white/20" : "bg-white/10"}`} />
                   <svg width="6" height="8" viewBox="0 0 6 8" className={`transition-colors duration-500 ${activeNode !== null && activeNode > i ? "text-white/40" : "text-white/10"}`}>
                     <path d="M1 1l4 3-4 3" stroke="currentColor" strokeWidth="1.2" fill="none" />
                   </svg>
@@ -139,7 +135,6 @@ function WorkflowPreview() {
           ))}
         </div>
 
-        {/* Execution stats bar */}
         <div className="flex items-center justify-between px-6 py-2.5 border-t border-white/[0.04] text-[10px] text-white/25 font-mono">
           <span>Last run: 2s ago</span>
           <span>847 executions today</span>
@@ -147,7 +142,6 @@ function WorkflowPreview() {
         </div>
       </div>
 
-      {/* Glow */}
       <div className="absolute -inset-8 -z-10 bg-gradient-to-b from-violet-500/8 via-blue-500/5 to-transparent rounded-3xl blur-3xl" />
     </div>
   );
@@ -173,10 +167,9 @@ const bundles = [
     name: "AI Content Factory",
     desc: "Repurpose content across channels with AI",
     price: 97,
-    count: 5,
+    productId: "bundle-content",
     gradient: "from-violet-500/20 via-violet-500/5 to-transparent",
     border: "hover:border-violet-500/30",
-    dot: "bg-violet-400",
     icon: "✍️",
     popular: true,
     items: [
@@ -191,10 +184,9 @@ const bundles = [
     name: "Sales & Lead Gen",
     desc: "Find, score, and close leads on autopilot",
     price: 127,
-    count: 5,
+    productId: "bundle-sales",
     gradient: "from-emerald-500/20 via-emerald-500/5 to-transparent",
     border: "hover:border-emerald-500/30",
-    dot: "bg-emerald-400",
     icon: "🎯",
     popular: false,
     items: [
@@ -209,10 +201,9 @@ const bundles = [
     name: "E-commerce Autopilot",
     desc: "Recover revenue and automate operations",
     price: 97,
-    count: 5,
+    productId: "bundle-ecommerce",
     gradient: "from-amber-500/20 via-amber-500/5 to-transparent",
     border: "hover:border-amber-500/30",
-    dot: "bg-amber-400",
     icon: "🛒",
     popular: false,
     items: [
@@ -227,10 +218,9 @@ const bundles = [
     name: "Support & Ops AI",
     desc: "Triage, respond, and report automatically",
     price: 97,
-    count: 5,
+    productId: "bundle-support",
     gradient: "from-sky-500/20 via-sky-500/5 to-transparent",
     border: "hover:border-sky-500/30",
-    dot: "bg-sky-400",
     icon: "🤖",
     popular: false,
     items: [
@@ -287,14 +277,35 @@ const faqs = [
   },
 ];
 
+/* ── Checkout handler ── */
+async function handleCheckout(productId: string) {
+  try {
+    const res = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ productId }),
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      alert("Stripe is not configured yet. Join the waitlist for early access!");
+    }
+  } catch {
+    alert("Stripe is not configured yet. Join the waitlist for early access!");
+  }
+}
+
 export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email) return;
+    if (!email || loading) return;
+    setLoading(true);
     try {
       await fetch("/api/waitlist", {
         method: "POST",
@@ -304,53 +315,24 @@ export default function Home() {
     } catch {
       /* show success anyway */
     }
+    setLoading(false);
     setSubmitted(true);
   };
 
   return (
     <div className="min-h-screen bg-[#06060a] text-white antialiased selection:bg-violet-500/30">
-      {/* CSS animations */}
-      <style jsx global>{`
-        @keyframes drift {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(30px, -30px) scale(1.05); }
-          66% { transform: translate(-20px, 20px) scale(0.95); }
-        }
-        @keyframes shimmer {
-          0% { background-position: -200% center; }
-          100% { background-position: 200% center; }
-        }
-        @keyframes pulse-glow {
-          0%, 100% { opacity: 0.4; }
-          50% { opacity: 1; }
-        }
-        .shimmer-text {
-          background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1) 100%);
-          background-size: 200% auto;
-          -webkit-background-clip: text;
-          background-clip: text;
-          animation: shimmer 8s linear infinite;
-        }
-        .grid-bg {
-          background-image:
-            linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
-          background-size: 64px 64px;
-        }
-      `}</style>
-
       <GradientOrbs />
 
       {/* ── Nav ── */}
       <nav className="fixed top-0 z-50 w-full">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="flex h-16 items-center justify-between rounded-b-2xl bg-white/[0.03] backdrop-blur-2xl border-x border-b border-white/[0.06] px-6 -mx-0">
-            <a href="/" className="flex items-center gap-2.5 group">
+          <div className="flex h-16 items-center justify-between rounded-b-2xl bg-white/[0.03] backdrop-blur-2xl border-x border-b border-white/[0.06] px-6">
+            <Link href="/" className="flex items-center gap-2.5 group">
               <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-violet-500 to-blue-500 flex items-center justify-center shadow-lg shadow-violet-500/20">
                 <span className="text-[11px] font-extrabold text-white tracking-tight">FC</span>
               </div>
               <span className="text-[15px] font-semibold tracking-[-0.01em] text-white/90">FlowCrate</span>
-            </a>
+            </Link>
             <div className="hidden md:flex items-center gap-8 text-[13px] text-white/35">
               <a href="#how" className="hover:text-white transition-colors duration-200">How It Works</a>
               <a href="#templates" className="hover:text-white transition-colors duration-200">Templates</a>
@@ -361,7 +343,7 @@ export default function Home() {
               href="#waitlist"
               className="group relative inline-flex h-9 items-center rounded-lg bg-white px-4 text-[13px] font-semibold text-black overflow-hidden transition-shadow hover:shadow-lg hover:shadow-white/10"
             >
-              <span className="relative z-10">Get Early Access</span>
+              Get Early Access
             </a>
           </div>
         </div>
@@ -400,7 +382,7 @@ export default function Home() {
 
           {/* Waitlist */}
           <Reveal delay={300}>
-            <div id="waitlist" className="mx-auto max-w-md">
+            <div id="waitlist" className="mx-auto max-w-md scroll-mt-24">
               {submitted ? (
                 <div className="rounded-2xl border border-emerald-500/20 bg-emerald-500/[0.06] backdrop-blur-sm px-6 py-5">
                   <div className="flex items-center gap-3 justify-center">
@@ -426,9 +408,10 @@ export default function Home() {
                     />
                     <Button
                       type="submit"
-                      className="h-11 bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-400 hover:to-blue-400 text-white font-semibold px-6 rounded-xl shrink-0 shadow-lg shadow-violet-500/20 transition-all hover:shadow-violet-500/30"
+                      disabled={loading}
+                      className="h-11 bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-400 hover:to-blue-400 text-white font-semibold px-6 rounded-xl shrink-0 shadow-lg shadow-violet-500/20 transition-all hover:shadow-violet-500/30 disabled:opacity-50"
                     >
-                      Join Waitlist
+                      {loading ? "Joining..." : "Join Waitlist"}
                     </Button>
                   </div>
                 </form>
@@ -476,7 +459,7 @@ export default function Home() {
       </section>
 
       {/* ── How It Works ── */}
-      <section id="how" className="py-28 px-6 relative">
+      <section id="how" className="py-28 px-6 relative scroll-mt-20">
         <GradientOrbs />
         <div className="mx-auto max-w-4xl relative z-10">
           <Reveal>
@@ -527,7 +510,7 @@ export default function Home() {
       </section>
 
       {/* ── Template Bundles ── */}
-      <section id="templates" className="py-28 px-6 border-t border-white/[0.04]">
+      <section id="templates" className="py-28 px-6 border-t border-white/[0.04] scroll-mt-20">
         <div className="mx-auto max-w-5xl">
           <Reveal>
             <p className="text-xs font-medium text-violet-400/60 uppercase tracking-[0.2em] mb-3 text-center">Templates</p>
@@ -543,7 +526,6 @@ export default function Home() {
             {bundles.map((b, i) => (
               <Reveal key={b.name} delay={i * 100}>
                 <div className={`group relative rounded-2xl border border-white/[0.06] overflow-hidden transition-all duration-300 ${b.border} hover:shadow-lg hover:shadow-black/20`}>
-                  {/* Gradient background */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${b.gradient} opacity-50 group-hover:opacity-100 transition-opacity`} />
 
                   {b.popular && (
@@ -577,7 +559,10 @@ export default function Home() {
                         <span className="text-3xl font-bold">${b.price}</span>
                         <span className="text-[11px] text-white/20 ml-1.5">one-time</span>
                       </div>
-                      <button className="text-[12px] font-semibold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.08] hover:border-white/20 px-4 py-2 rounded-lg transition-all duration-200">
+                      <button
+                        onClick={() => handleCheckout(b.productId)}
+                        className="text-[12px] font-semibold text-white bg-white/[0.08] hover:bg-white/[0.15] border border-white/[0.08] hover:border-white/20 px-4 py-2 rounded-lg transition-all duration-200 cursor-pointer active:scale-95"
+                      >
                         Get Bundle →
                       </button>
                     </div>
@@ -590,12 +575,11 @@ export default function Home() {
       </section>
 
       {/* ── All Access ── */}
-      <section id="pricing" className="py-28 px-6 border-t border-white/[0.04] relative">
+      <section id="pricing" className="py-28 px-6 border-t border-white/[0.04] relative scroll-mt-20">
         <div className="absolute inset-0 bg-gradient-to-b from-violet-500/[0.02] via-transparent to-transparent" />
         <div className="mx-auto max-w-lg relative z-10">
           <Reveal>
             <div className="rounded-2xl border border-white/[0.08] overflow-hidden">
-              {/* Top accent */}
               <div className="h-1 bg-gradient-to-r from-violet-500 via-blue-500 to-emerald-500" />
 
               <div className="p-8 sm:p-10">
@@ -632,7 +616,10 @@ export default function Home() {
                   ))}
                 </ul>
 
-                <Button className="w-full h-12 bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-400 hover:to-blue-400 text-white font-semibold text-[15px] rounded-xl shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 transition-all">
+                <Button
+                  onClick={() => handleCheckout("all-access")}
+                  className="w-full h-12 bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-400 hover:to-blue-400 text-white font-semibold text-[15px] rounded-xl shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 transition-all cursor-pointer active:scale-[0.98]"
+                >
                   Get All Access
                 </Button>
                 <p className="text-[11px] text-white/15 text-center mt-4">30-day money-back guarantee</p>
@@ -656,7 +643,6 @@ export default function Home() {
             {testimonials.map((t, i) => (
               <Reveal key={t.name} delay={i * 100}>
                 <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 hover:border-white/[0.12] transition-colors">
-                  {/* Stars */}
                   <div className="flex gap-0.5 mb-4">
                     {[...Array(5)].map((_, j) => (
                       <svg key={j} width="14" height="14" viewBox="0 0 14 14" fill="rgb(250, 204, 21)" className="text-yellow-400">
@@ -697,7 +683,7 @@ export default function Home() {
                 <div className="rounded-xl border border-white/[0.06] bg-white/[0.02] overflow-hidden transition-colors hover:border-white/[0.1]">
                   <button
                     onClick={() => setOpenFaq(openFaq === i ? null : i)}
-                    className="w-full flex items-center justify-between p-5 text-left"
+                    className="w-full flex items-center justify-between p-5 text-left cursor-pointer"
                   >
                     <h3 className="text-[15px] font-medium pr-4">{item.q}</h3>
                     <svg
@@ -738,7 +724,7 @@ export default function Home() {
             </p>
             <a
               href="#waitlist"
-              className="inline-flex h-12 items-center rounded-xl bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-400 hover:to-blue-400 px-8 text-[15px] font-semibold text-white shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 transition-all"
+              className="inline-flex h-12 items-center rounded-xl bg-gradient-to-r from-violet-500 to-blue-500 hover:from-violet-400 hover:to-blue-400 px-8 text-[15px] font-semibold text-white shadow-lg shadow-violet-500/20 hover:shadow-violet-500/30 transition-all active:scale-[0.98]"
             >
               Get Early Access →
             </a>
@@ -759,8 +745,8 @@ export default function Home() {
             &copy; {new Date().getFullYear()} FlowCrate. All rights reserved.
           </p>
           <div className="flex gap-6 text-[11px] text-white/20">
-            <a href="#" className="hover:text-white/50 transition">Twitter</a>
-            <a href="#" className="hover:text-white/50 transition">Discord</a>
+            <a href="https://x.com/flowcrate" target="_blank" rel="noopener noreferrer" className="hover:text-white/50 transition">Twitter</a>
+            <a href="https://discord.gg/flowcrate" target="_blank" rel="noopener noreferrer" className="hover:text-white/50 transition">Discord</a>
             <Link href="/blog" className="hover:text-white/50 transition">Blog</Link>
           </div>
         </div>
