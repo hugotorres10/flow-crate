@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "templates": "Templates",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "cta": "Get Early Access"
+  },
+  "hero": {
+    "badge": "Launching Soon",
+    "title1": "AI Workflows That",
+    "title2": "Actually Work.",
+    "subtitle": "Production-ready n8n templates with Claude AI. Import, configure, deploy. Stop rebuilding what already exists.",
+    "placeholder": "Enter your email",
+    "button": "Join Waitlist",
+    "note": "Free AI template included. No spam."
+  },
+  "stats": {
+    "templates": "20+",
+    "templatesLabel": "Templates",
+    "setup": "5 min",
+    "setupLabel": "Avg Setup",
+    "bundles": "4",
+    "bundlesLabel": "Bundles",
+    "uptime": "24/7",
+    "uptimeLabel": "Running"
+  },
+  "howItWorks": {
+    "title": "Three Steps to Automation",
+    "subtitle": "From purchase to running workflow in minutes.",
+    "step1Title": "Pick a Bundle",
+    "step1Desc": "Choose the automation pack for your use case — content, sales, e-commerce, or operations.",
+    "step2Title": "Import to n8n",
+    "step2Desc": "Copy the JSON into n8n. Each template includes a setup guide.",
+    "step3Title": "Go Live",
+    "step3Desc": "Add your API keys, activate, and let AI handle the rest."
+  },
+  "bundles": {
+    "title": "Template Bundles",
+    "subtitle": "5 production-ready workflows per bundle. AI built-in. Documentation included.",
+    "contentName": "AI Content Factory",
+    "salesName": "Sales & Lead Gen",
+    "ecommerceName": "E-commerce Autopilot",
+    "supportName": "Support & Ops AI",
+    "workflows": "workflows",
+    "oneTime": "one-time",
+    "bundleCta": "Get This Bundle"
+  },
+  "allAccess": {
+    "bestValue": "Best Value",
+    "title": "All Access Pass",
+    "subtitle": "Every template. Every update. Unlimited.",
+    "perMonth": "/month",
+    "feature1": "All 20+ templates",
+    "feature2": "New templates monthly",
+    "feature3": "Video setup guides",
+    "feature4": "Priority Discord support",
+    "feature5": "Request custom templates",
+    "feature6": "Cancel anytime",
+    "cta": "Get All Access"
+  },
+  "faq": {
+    "title": "Questions & Answers",
+    "q1": "What is n8n?",
+    "a1": "n8n is an open-source workflow automation tool — like Zapier, but self-hosted and more powerful. Our templates are pre-built workflows you import directly.",
+    "q2": "Do I need coding skills?",
+    "a2": "No. Import the JSON, add your API keys, activate. Each template has a step-by-step guide.",
+    "q3": "Which AI models are used?",
+    "a3": "Most templates use Claude by Anthropic. Some support GPT-4. You need your own API key.",
+    "q4": "Can I modify templates?",
+    "a4": "Yes. Everything is fully editable inside n8n. Make them yours.",
+    "q5": "What's your refund policy?",
+    "a5": "30-day money-back guarantee. If it doesn't work for you, full refund."
+  },
+  "cta": {
+    "title": "Stop Rebuilding. Start Shipping.",
+    "subtitle": "Join the waitlist for early access and a free template.",
+    "button": "Get Early Access"
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "templates": "Plantillas",
+    "pricing": "Precios",
+    "blog": "Blog",
+    "cta": "Acceso Anticipado"
+  },
+  "hero": {
+    "badge": "Muy Pronto",
+    "title1": "Workflows de IA Que",
+    "title2": "De Verdad Funcionan.",
+    "subtitle": "Plantillas n8n listas para produccion con Claude AI. Importa, configura, despliega. Deja de reconstruir lo que ya existe.",
+    "placeholder": "Introduce tu email",
+    "button": "Unirse a la Lista",
+    "note": "Plantilla de IA gratis incluida. Sin spam."
+  },
+  "stats": {
+    "templates": "20+",
+    "templatesLabel": "Plantillas",
+    "setup": "5 min",
+    "setupLabel": "Config. Media",
+    "bundles": "4",
+    "bundlesLabel": "Paquetes",
+    "uptime": "24/7",
+    "uptimeLabel": "Activo"
+  },
+  "howItWorks": {
+    "title": "Tres Pasos Para Automatizar",
+    "subtitle": "De la compra al workflow activo en minutos.",
+    "step1Title": "Elige un Paquete",
+    "step1Desc": "Selecciona el pack de automatizacion para tu caso — contenido, ventas, e-commerce u operaciones.",
+    "step2Title": "Importa en n8n",
+    "step2Desc": "Pega el JSON en n8n. Cada plantilla incluye una guia de configuracion.",
+    "step3Title": "Lanza",
+    "step3Desc": "Anade tus API keys, activa y deja que la IA se encargue del resto."
+  },
+  "bundles": {
+    "title": "Paquetes de Plantillas",
+    "subtitle": "5 workflows listos para produccion por paquete. IA integrada. Documentacion incluida.",
+    "contentName": "Fabrica de Contenido IA",
+    "salesName": "Ventas & Captacion",
+    "ecommerceName": "E-commerce en Piloto Automatico",
+    "supportName": "Soporte & Operaciones IA",
+    "workflows": "workflows",
+    "oneTime": "pago unico",
+    "bundleCta": "Obtener Este Paquete"
+  },
+  "allAccess": {
+    "bestValue": "Mejor Valor",
+    "title": "Pase Total",
+    "subtitle": "Todas las plantillas. Todas las actualizaciones. Sin limites.",
+    "perMonth": "/mes",
+    "feature1": "Las 20+ plantillas",
+    "feature2": "Nuevas plantillas cada mes",
+    "feature3": "Guias de configuracion en video",
+    "feature4": "Soporte prioritario en Discord",
+    "feature5": "Solicita plantillas personalizadas",
+    "feature6": "Cancela cuando quieras",
+    "cta": "Obtener Pase Total"
+  },
+  "faq": {
+    "title": "Preguntas y Respuestas",
+    "q1": "Que es n8n?",
+    "a1": "n8n es una herramienta open-source de automatizacion de workflows — como Zapier, pero self-hosted y mas potente. Nuestras plantillas son workflows preconstruidos que importas directamente.",
+    "q2": "Necesito saber programar?",
+    "a2": "No. Importa el JSON, anade tus API keys, activa. Cada plantilla tiene una guia paso a paso.",
+    "q3": "Que modelos de IA se usan?",
+    "a3": "La mayoria de plantillas usan Claude de Anthropic. Algunas soportan GPT-4. Necesitas tu propia API key.",
+    "q4": "Puedo modificar las plantillas?",
+    "a4": "Si. Todo es completamente editable dentro de n8n. Hazlas tuyas.",
+    "q5": "Cual es la politica de reembolso?",
+    "a5": "Garantia de devolucion de 30 dias. Si no te funciona, reembolso total."
+  },
+  "cta": {
+    "title": "Deja de Reconstruir. Empieza a Lanzar.",
+    "subtitle": "Unete a la lista de espera para acceso anticipado y una plantilla gratis.",
+    "button": "Acceso Anticipado"
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}

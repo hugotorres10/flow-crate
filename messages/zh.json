@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "templates": "模板",
+    "pricing": "定价",
+    "blog": "博客",
+    "cta": "抢先体验"
+  },
+  "hero": {
+    "badge": "即将上线",
+    "title1": "真正好用的",
+    "title2": "AI工作流。",
+    "subtitle": "搭载Claude AI的生产级n8n模板。导入、配置、部署。别再重复造轮子了。",
+    "placeholder": "输入你的邮箱",
+    "button": "加入等待列表",
+    "note": "免费赠送AI模板。绝无垃圾邮件。"
+  },
+  "stats": {
+    "templates": "20+",
+    "templatesLabel": "模板",
+    "setup": "5分钟",
+    "setupLabel": "平均配置",
+    "bundles": "4",
+    "bundlesLabel": "套餐",
+    "uptime": "24/7",
+    "uptimeLabel": "持续运行"
+  },
+  "howItWorks": {
+    "title": "三步实现自动化",
+    "subtitle": "从购买到工作流上线，只需几分钟。",
+    "step1Title": "选择套餐",
+    "step1Desc": "根据你的需求选择自动化套餐——内容、销售、电商或运营。",
+    "step2Title": "导入n8n",
+    "step2Desc": "将JSON复制到n8n中。每个模板附带配置指南。",
+    "step3Title": "上线运行",
+    "step3Desc": "添加你的API密钥，激活，剩下的交给AI。"
+  },
+  "bundles": {
+    "title": "模板套餐",
+    "subtitle": "每个套餐包含5个生产级工作流。内置AI。含完整文档。",
+    "contentName": "AI内容工厂",
+    "salesName": "销售与获客",
+    "ecommerceName": "电商自动驾驶",
+    "supportName": "客服与运营AI",
+    "workflows": "个工作流",
+    "oneTime": "一次性付款",
+    "bundleCta": "获取此套餐"
+  },
+  "allAccess": {
+    "bestValue": "超值之选",
+    "title": "全通行证",
+    "subtitle": "所有模板。所有更新。无限使用。",
+    "perMonth": "/月",
+    "feature1": "全部20+模板",
+    "feature2": "每月更新新模板",
+    "feature3": "视频配置教程",
+    "feature4": "Discord优先支持",
+    "feature5": "可申请定制模板",
+    "feature6": "随时取消",
+    "cta": "获取全通行证"
+  },
+  "faq": {
+    "title": "常见问题",
+    "q1": "什么是n8n？",
+    "a1": "n8n是一个开源的工作流自动化工具——类似Zapier，但可以自托管，功能更强大。我们的模板是预构建的工作流，可以直接导入使用。",
+    "q2": "需要编程技能吗？",
+    "a2": "不需要。导入JSON，添加API密钥，激活即可。每个模板都有详细的分步指南。",
+    "q3": "使用了哪些AI模型？",
+    "a3": "大部分模板使用Anthropic的Claude。部分支持GPT-4。你需要自己的API密钥。",
+    "q4": "可以修改模板吗？",
+    "a4": "当然可以。在n8n中一切都可以自由编辑。打造属于你自己的工作流。",
+    "q5": "退款政策是什么？",
+    "a5": "30天无条件退款保证。如果不适合你，全额退款。"
+  },
+  "cta": {
+    "title": "别再重复造轮子。立刻开始。",
+    "subtitle": "加入等待列表，抢先体验并获得免费模板。",
+    "button": "抢先体验"
+  },
+  "footer": {
+    "rights": "保留所有权利。"
+  }
+}

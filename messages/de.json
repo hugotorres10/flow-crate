@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "templates": "Vorlagen",
+    "pricing": "Preise",
+    "blog": "Blog",
+    "cta": "Fruher Zugang"
+  },
+  "hero": {
+    "badge": "Demnachst Verfugbar",
+    "title1": "KI-Workflows, Die",
+    "title2": "Wirklich Funktionieren.",
+    "subtitle": "Produktionsfertige n8n-Vorlagen mit Claude AI. Importieren, konfigurieren, deployen. Hor auf, das Rad neu zu erfinden.",
+    "placeholder": "Deine E-Mail-Adresse",
+    "button": "Auf die Warteliste",
+    "note": "Gratis KI-Vorlage inklusive. Kein Spam."
+  },
+  "stats": {
+    "templates": "20+",
+    "templatesLabel": "Vorlagen",
+    "setup": "5 Min",
+    "setupLabel": "Durchschn. Setup",
+    "bundles": "4",
+    "bundlesLabel": "Pakete",
+    "uptime": "24/7",
+    "uptimeLabel": "Im Betrieb"
+  },
+  "howItWorks": {
+    "title": "Drei Schritte zur Automatisierung",
+    "subtitle": "Vom Kauf zum laufenden Workflow in Minuten.",
+    "step1Title": "Paket Wahlen",
+    "step1Desc": "Wahle das Automatisierungspaket fur deinen Anwendungsfall — Content, Vertrieb, E-Commerce oder Operations.",
+    "step2Title": "In n8n Importieren",
+    "step2Desc": "Fuge das JSON in n8n ein. Jede Vorlage enthalt eine Einrichtungsanleitung.",
+    "step3Title": "Live Gehen",
+    "step3Desc": "Trage deine API-Keys ein, aktiviere und lass die KI den Rest erledigen."
+  },
+  "bundles": {
+    "title": "Vorlagen-Pakete",
+    "subtitle": "5 produktionsfertige Workflows pro Paket. KI integriert. Dokumentation inklusive.",
+    "contentName": "KI Content-Fabrik",
+    "salesName": "Vertrieb & Leadgenerierung",
+    "ecommerceName": "E-Commerce Autopilot",
+    "supportName": "Support & Operations KI",
+    "workflows": "Workflows",
+    "oneTime": "Einmalzahlung",
+    "bundleCta": "Paket Holen"
+  },
+  "allAccess": {
+    "bestValue": "Bestes Angebot",
+    "title": "Komplett-Zugang",
+    "subtitle": "Alle Vorlagen. Alle Updates. Unbegrenzt.",
+    "perMonth": "/Monat",
+    "feature1": "Alle 20+ Vorlagen",
+    "feature2": "Neue Vorlagen jeden Monat",
+    "feature3": "Video-Einrichtungsanleitungen",
+    "feature4": "Prioritarer Discord-Support",
+    "feature5": "Individuelle Vorlagen anfragen",
+    "feature6": "Jederzeit kundbar",
+    "cta": "Komplett-Zugang Holen"
+  },
+  "faq": {
+    "title": "Fragen und Antworten",
+    "q1": "Was ist n8n?",
+    "a1": "n8n ist ein Open-Source-Tool zur Workflow-Automatisierung — wie Zapier, aber selbst gehostet und leistungsstarker. Unsere Vorlagen sind fertige Workflows, die du direkt importierst.",
+    "q2": "Muss ich programmieren konnen?",
+    "a2": "Nein. Importiere das JSON, trage deine API-Keys ein, aktiviere. Jede Vorlage hat eine Schritt-fur-Schritt-Anleitung.",
+    "q3": "Welche KI-Modelle werden verwendet?",
+    "a3": "Die meisten Vorlagen nutzen Claude von Anthropic. Einige unterstutzen GPT-4. Du brauchst deinen eigenen API-Key.",
+    "q4": "Kann ich die Vorlagen anpassen?",
+    "a4": "Ja. Alles ist in n8n vollstandig editierbar. Mach sie zu deinen eigenen.",
+    "q5": "Wie ist eure Ruckgaberichtlinie?",
+    "a5": "30-Tage-Geld-zuruck-Garantie. Wenn es nicht fur dich passt, volle Ruckerstattung."
+  },
+  "cta": {
+    "title": "Hor Auf Neu zu Bauen. Fang An zu Liefern.",
+    "subtitle": "Trag dich in die Warteliste ein fur fruhen Zugang und eine kostenlose Vorlage.",
+    "button": "Fruher Zugang"
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten."
+  }
+}

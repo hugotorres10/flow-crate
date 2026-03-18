@@ -1,0 +1,82 @@
+{
+  "nav": {
+    "templates": "Templates",
+    "pricing": "Tarifs",
+    "blog": "Blog",
+    "cta": "Acces Anticipé"
+  },
+  "hero": {
+    "badge": "Bientot Disponible",
+    "title1": "Des Workflows IA Qui",
+    "title2": "Fonctionnent Vraiment.",
+    "subtitle": "Templates n8n prets pour la production avec Claude AI. Importez, configurez, deployez. Arretez de reinventer ce qui existe deja.",
+    "placeholder": "Votre adresse email",
+    "button": "Rejoindre la Liste",
+    "note": "Template IA offert. Zero spam."
+  },
+  "stats": {
+    "templates": "20+",
+    "templatesLabel": "Templates",
+    "setup": "5 min",
+    "setupLabel": "Config. Moyenne",
+    "bundles": "4",
+    "bundlesLabel": "Packs",
+    "uptime": "24/7",
+    "uptimeLabel": "En Service"
+  },
+  "howItWorks": {
+    "title": "Trois Etapes Pour Automatiser",
+    "subtitle": "De l'achat au workflow actif en quelques minutes.",
+    "step1Title": "Choisissez un Pack",
+    "step1Desc": "Selectionnez le pack d'automatisation adapte a votre besoin — contenu, ventes, e-commerce ou operations.",
+    "step2Title": "Importez dans n8n",
+    "step2Desc": "Collez le JSON dans n8n. Chaque template inclut un guide de configuration.",
+    "step3Title": "Lancez",
+    "step3Desc": "Ajoutez vos cles API, activez et laissez l'IA faire le reste."
+  },
+  "bundles": {
+    "title": "Packs de Templates",
+    "subtitle": "5 workflows prets pour la production par pack. IA integree. Documentation incluse.",
+    "contentName": "Usine a Contenu IA",
+    "salesName": "Ventes & Generation de Leads",
+    "ecommerceName": "E-commerce en Pilote Automatique",
+    "supportName": "Support & Operations IA",
+    "workflows": "workflows",
+    "oneTime": "paiement unique",
+    "bundleCta": "Obtenir Ce Pack"
+  },
+  "allAccess": {
+    "bestValue": "Meilleur Rapport Qualite-Prix",
+    "title": "Pass Integral",
+    "subtitle": "Tous les templates. Toutes les mises a jour. Sans limites.",
+    "perMonth": "/mois",
+    "feature1": "Les 20+ templates",
+    "feature2": "Nouveaux templates chaque mois",
+    "feature3": "Guides video de configuration",
+    "feature4": "Support prioritaire sur Discord",
+    "feature5": "Demandez des templates sur mesure",
+    "feature6": "Resiliez a tout moment",
+    "cta": "Obtenir le Pass Integral"
+  },
+  "faq": {
+    "title": "Questions et Reponses",
+    "q1": "Qu'est-ce que n8n ?",
+    "a1": "n8n est un outil open-source d'automatisation de workflows — comme Zapier, mais auto-heberge et plus puissant. Nos templates sont des workflows preconstruits que vous importez directement.",
+    "q2": "Faut-il savoir coder ?",
+    "a2": "Non. Importez le JSON, ajoutez vos cles API, activez. Chaque template a un guide etape par etape.",
+    "q3": "Quels modeles d'IA sont utilises ?",
+    "a3": "La plupart des templates utilisent Claude d'Anthropic. Certains supportent GPT-4. Vous avez besoin de votre propre cle API.",
+    "q4": "Puis-je modifier les templates ?",
+    "a4": "Oui. Tout est entierement modifiable dans n8n. Faites-en les votres.",
+    "q5": "Quelle est votre politique de remboursement ?",
+    "a5": "Garantie satisfait ou rembourse sous 30 jours. Si ca ne vous convient pas, remboursement integral."
+  },
+  "cta": {
+    "title": "Arretez de Reinventer. Lancez-vous.",
+    "subtitle": "Rejoignez la liste d'attente pour un acces anticipe et un template offert.",
+    "button": "Acces Anticipe"
+  },
+  "footer": {
+    "rights": "Tous droits reserves."
+  }
+}
